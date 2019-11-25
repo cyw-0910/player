@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>交互式视频播放器-个人中心</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            font-size: 16px;
+        }
+        .player{
+            height: 64px;
+            width: 100%;
+            background-color: white;
+        }
+        .player .nav{
+            width: 1260px;
+            height: 64px;
+            margin:0 auto;
+            /* margin容器级居中 */
+        }
+        .player ul{
+            list-style: none;
+        }
+        .player .nav ul li{
+            float: left;
+            /* width: 120px; */
+            text-align: center;
+        }
+        .player a{
+            text-decoration: none;
+            display: block;
+            color: #000;
+            height: 64px;
+            line-height: 64px;
+            padding: 0 5px;
+        }
+        .player .nav .nav_border_left ul li{
+            width: 100px;
+            border-left: 2px solid #d5d5d6;
+        }
+        .player .nav .nav_logo{
+            /*  float: left与nav_nr组合使用，实现浮动*/
+            float: left;
+            height: 64px;
+            line-height: 64px;
+        }
+        .player .nav .nav_logo a{
+            height: 44px;
+            width: 250px;
+            padding: 10px 50px;
+            padding-left: 0;
+        }
+        .player .nav .nav_nr{
+            /*  float: left与nav_logo组合使用，实现浮动*/
+            float: left;
+        }
+        .player .nav .nav_nr ul li a{
+            display: flex;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            /* 以上四句用于将a标签布满li标签 */
+            width: auto;
+            height: 64px;
+            line-height: 64px;
+        }
+        .player .nav_nr .nr_thr{
+            color: rgb(153, 201, 77);
+        }
+        .player .nav_nr .nr_last{
+            border-right: 2px solid #d5d5d6;
+        }
+        
+        .player .nav .nav_search{
+            /*  float: left与nav_logo组合使用，实现浮动在一行上*/
+            float: left;
+            /* padding: 0 15px; */
+            padding-left: 30px;
+            height: 64px;
+            line-height: 64px;
+        }
+        .player .nav .nav_search input{
+            /* padding: 8px; */
+            text-indent: 15px;
+            height: 33px;
+            width: 200px;
+            /* 圆角去边框阴影 */
+            border-radius:15px;
+            border:1px solid #DBDBDB;
+            outline:none;
+        }
+        .player .nav .nav_search .input2{
+            width: 70px;
+            height: 33px;
+            background-color: rgb(53, 199, 72) ;
+            text-indent: 0;
+        }
+        .player .nav .nav_login{
+            /*  float: left与nav_logo组合使用，实现浮动在一行上*/
+            float: right;
+            padding:0 30px;
+            padding-right: 0;
+        }
+        .player .cl{
+            clear: both;
+            height: 50px;
+        }
+        .player .content{
+            text-align: center;
+            width: 1260px;
+            height: 1000px;
+            margin: 0 auto;
+            padding-top: 20px;
+            background-color: #e4f5f5;
+        }
+    </style>
+    <script type="text/javascript">
+    function change(){
+        alert("功能开发中...");
+    }
+    </script>
+</head>
+<body>
+    <div class="player">
+        <div class="nav">
+            <div class="nav_logo">
+                <a href="index.html"><img src="photo/playerlogo.png" alt="网站logo"></a>
+            </div>
+            <div class="nav_nr nav_border_left">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="kczx.html">课程中心</a></li>
+                    <li><a href="grzx.html" class="nr_thr">个人中心</a></li>
+                    <li><a href="gywm.html" class="nr_last nr_four">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="nav_search">
+                <input type="text" placeholder="输入关键词搜索">
+                <input type="submit" class="input2" value="搜索" onclick=change()>
+            </div>
+            <div class="nav_login">
+                <ul>
+                    <li><a href="#">注册</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content"></div>
+        <!-- <div class="cl"></div> -->
+    </div>
+</body>
+</html>
