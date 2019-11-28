@@ -121,10 +121,54 @@
             padding-top: 20px;
             background-color: #e4f5f5;
         }
+        .player .grxxnr{
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .player .xx_inp{
+            width: 400px;
+            margin: 0 auto;
+            padding: 23px 0;
+        }
+        .player .xx_inp input{
+            width: 400px;
+            height: 40px;
+        }
+        .player .xx_inp p{
+            float: left;
+            padding: 5px 0;
+        }
+        .player .xx_btn{
+            width: 400px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 auto;
+        }
+        .player .btn_inp{
+            float: left;
+            /* margin: 0 auto; */
+        }
+        .player .btn_inp input{
+            height: 35px;
+            width: 100px;
+            /* margin: 0 auto; */
+            margin: 0 50px;
+            border-radius:15px;
+            border:1px solid #DBDBDB;
+            outline:none;
+        }
+        .player .inp2{
+            margin: 0  0 0 100px;
+        }
     </style>
     <script type="text/javascript">
     function change(){
         alert("功能开发中...");
+    }
+    function kczx(){
+        window.history.back(-1);
     }
     </script>
 </head>
@@ -137,7 +181,7 @@
             <div class="nav_nr nav_border_left">
                 <ul>
                     <li><a href="index.html" class="nr_first">首页</a></li>
-                    <li><a href="kczx.html">课程中心</a></li>
+                    <li><a href="kczx.html" class="nr_sec">课程中心</a></li>
                     <li><a href="grzx.html">个人中心</a></li>
                     <li><a href="gywm.html" class="nr_last">关于我们</a></li>
                 </ul>
@@ -154,8 +198,23 @@
                 </ul>
             </div>
         </div>
-        <div class="content"></div>
-        <!-- <div class="cl"></div> -->
+        <div class="content">
+            
+        <div class="grxxnr">
+                <h3 style="padding: 20px 0;">测试考核</h3>
+            <div class="grxxk">
+                <div class="xx_inp"><p>什么是HTML？</p><input type="text" placeholder="请输入内容"></div>
+                <div class="xx_inp"><p>HTML有什么特点？</p><input type="text" placeholder="请输入内容"></div>
+                <div class="xx_inp"><p>网站是由什么组成的？</p><input type="text" placeholder="请输入内容"></div>
+                <div class="xx_inp"><p>HTML的中文全称是什么？</p><input type="text" placeholder="请输入内容"></div>
+                <div class="xx_inp"><p>列举HTML中常用的三个标签：</p><input type="text" placeholder="请输入内容"></div>
+                <div class="xx_btn">
+                    <div class="btn_inp"><input type="submit" value="保存" onclick="change()"></div>
+                    <div class="btn_inp"><input class="inp2" type="submit" value="提交" onclick=kczx()></div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 </html>

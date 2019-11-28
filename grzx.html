@@ -115,11 +115,77 @@
         }
         .player .content{
             text-align: center;
-            width: 1260px;
+            /* width: 1260px; */
             height: 1000px;
             margin: 0 auto;
             padding-top: 20px;
             background-color: #e4f5f5;
+        }
+        .player .grxxk{
+            margin: 0 auto;
+            width: 70%;
+            height: 800px;
+            border: 1px solid #000;
+            
+        }
+        .player .grzxbg{
+            width: 100%;
+            height: 220px;
+            position:relative;
+        }
+        .player .cl{
+            clear: both;
+            height: 5px;
+        }
+        .player .gezx_con{
+            width: 1280px;
+            height: 220px;
+            line-height: 220px;
+            position:absolute;
+            top:0;
+            left:0;
+            right: 0;
+            margin: 0 auto;
+            
+        }
+        .player .grzxtx{
+            font-size: 55px;
+            color: #fff;
+        }
+
+        .player .grxxnr{
+            padding: 50px 0;
+            width: 1280px;
+            height: 800px;
+            background: #fff;
+            margin: 0 auto;
+        }
+        .player .xx_inp{
+            padding: 30px 0;
+
+        }
+        .player .xx_inp input{
+            height: 40px;
+            width: 50%;
+            text-indent: 10px;
+        }
+        .player .xx_btn{
+            /* margin: 0 auto; */
+            width: 896px;
+            height: 50px;
+            line-height: 50px;
+        }
+        .player .xx_btn input{
+            width: 150px;
+            height: 45px;
+            border-radius:15px;
+            border:1px solid #DBDBDB;
+            outline:none;
+        }
+        .player .btn_inp{
+            padding-top: 25px;
+            padding-left: 23%;
+            float: left;
         }
     </style>
     <script type="text/javascript">
@@ -154,8 +220,29 @@
                 </ul>
             </div>
         </div>
-        <div class="content"></div>
         <!-- <div class="cl"></div> -->
+        <div class="content">
+            <div class="grzxbg">
+                <img class="top_bac" width="100%" height="220px" src="photo/grbg.png" alt="个人中心背景">
+                <div class="gezx_con">
+                    <p class="grzxtx">欢迎来到个人中心</p>
+                </div>
+            </div>
+            <div class="grxxnr">
+                <div class="grxxk">
+                    <div class="xx_inp">家庭地址：<input type="text" value="广西玉林市教育东路1303号" placeholder="请输入内容"></div>
+                    <div class="xx_inp">学&emsp;&emsp;院：<input type="text" value="计算机科学与工程学院" placeholder="请输入内容"></div>
+                    <div class="xx_inp">姓&emsp;&emsp;名：<input type="text" value="测试账户" placeholder="请输入内容"></div>
+                    <div class="xx_inp">电&emsp;&emsp;话：<input type="text" value="18378912314" placeholder="请输入内容"></div>
+                    <div class="xx_inp">出生年月：<input type="text" value="1999/12/21" placeholder="请输入内容"></div>
+                    <div class="xx_inp">个性签名：<input type="text" value="我来自广西北海" placeholder="请输入内容"></div>
+                    <div class="xx_btn">
+                        <div class="btn_inp"><input type="submit" value="保存"></div>
+                        <div class="btn_inp"><input type="submit" value="取消"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
