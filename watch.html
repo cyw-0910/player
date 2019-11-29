@@ -117,7 +117,7 @@
         .player .content{
             text-align: center;
             width: 1260px;
-            height: 1000px;
+            height: 650px;
             margin: 0 auto;
             padding-top: 20px;
             background-color: #e4f5f5;
@@ -331,6 +331,34 @@
         .tc .top a:hover{
             opacity: 1;
         }
+        .player .company{
+            padding: 10px 0;
+            /* height: 208px;  */
+            text-align: center;
+        }
+
+        .player .xstw{
+            line-height: 35px;
+            margin-top: 25px;
+        }
+        .player .xstw input{
+            
+            width: 125px;
+            height: 35px;
+            margin: 0 50px;
+            border-radius: 25px;
+            border:1px solid #DBDBDB;
+            outline:none;
+            background-color: #4d99fd;
+        }
+        .player .tc_tit{
+            color: #3A3C3D;
+            opacity: 0.7;
+            text-align: left;
+            height: 64px;
+            line-height: 64px;
+            /* width: 100%; */
+        }
     </style>
     
 </head>
@@ -384,23 +412,40 @@
                 <div class="r_wel"><span>欢迎使用</span></div>
             </div>
             <div class="cl"></div>
-            <div onclick="">5555</div>
+            <div>说明：使用JS代码，播放到一定时间，自动弹出问题提问（目前是5-7秒弹出提问）！</div>
+            <div>学生则可以通过下方按钮向老师提问。</div>
+
+            <div class="xstw">
+                学生提问：
+                <input type="submit" value="文字提问" onclick="chickMe()">
+                <input type="submit" value="语音提问" >
+                <input type="submit" value="视频提问">
+            </div>
             <!-- 自定义弹窗 -->
             <div class="tc">
                     <div id="d2"></div>
-                    <button onclick="chickMe()">点击</button>
+                    <!-- <button onclick="chickMe()">点击</button> -->
                     <div id="d1">
                     <div class="top">
-                        <a href="javascript:void(0)" onclick="cancel()">&#935;</a>
+                        <!-- <span>444</span> -->
+                        <div class="tc_tit">
+                            <span class="xstwtc">学生提问弹窗</span>
+                            <a href="javascript:void(0)" onclick="cancel()">&#935;</a>
+                        </div>
                     </div>
-                    <input type="text" class="number" placeholder="请输入数量" id="number">
+                    <input type="text" class="number" placeholder="请输入" id="number">
                     <div class="submit">
-                        <input type="checkbox" value="111">
+                        <!-- <input type="checkbox" value="111"> -->
                         <button class="cancel"onclick="cancel()">取消</button>
                         <button class="confirm" onclick="confirm()">确定</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="company">
+            <div class="kbai"></div>
+            <p>公司地址：广西玉林市教育东路&emsp; &emsp;&emsp;联系电话：0779-77701234</p>
+            <p>Copyright&nbsp;©&nbsp;2019&nbsp;by&nbsp;陈延威&nbsp;All&nbsp;Rights&nbsp;Reserved</p>
         </div>
     </div>
 </body>
