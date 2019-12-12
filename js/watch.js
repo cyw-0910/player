@@ -5,7 +5,7 @@ function main(){
         var videos = document.getElementById("videos");
         var currentTime=videos.currentTime.toFixed(1);
         console.log("时间"+currentTime);
-        console.log("标记"+times);
+        // console.log("标记"+times);
         if(currentTime > 5 ){
             chickMe();
         }
@@ -43,6 +43,7 @@ function closes(){
     d2.style.display="none";
     let d1=document.getElementById("d1");
     d1.style.display="none";
+    clearInterval(setInter);
     console.log("点击关闭");
 }
 function stu_ques(){
