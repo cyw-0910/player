@@ -5,361 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>交互式视频播放器-课程中心</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            margin: 0 auto;
-            background-color: #f5f5f5;
-            font-size: 16px;
-        }
-        .player{
-            height: 64px;
-            width: 100%;
-            background-color: white;
-        }
-        .player .nav{
-            width: 1260px;
-            height: 64px;
-            margin:0 auto;
-            /* margin容器级居中 */
-        }
-        .player ul{
-            list-style: none;
-        }
-        .player .nav ul li{
-            float: left;
-            /* width: 120px; */
-            text-align: center;
-        }
-        .player a{
-            text-decoration: none;
-            display: block;
-            color: #000;
-            height: 64px;
-            line-height: 64px;
-            padding: 0 5px;
-        }
-        .player .nav .nav_border_left ul li{
-            width: 100px;
-            border-left: 2px solid #d5d5d6;
-        }
-        .player .nav .nav_logo{
-            /*  float: left与nav_nr组合使用，实现浮动*/
-            float: left;
-            height: 64px;
-            line-height: 64px;
-        }
-        .player .nav .nav_logo a{
-            height: 44px;
-            width: 250px;
-            padding: 10px 50px;
-            padding-left: 0;
-        }
-        .player .nav .nav_nr{
-            /*  float: left与nav_logo组合使用，实现浮动*/
-            float: left;
-        }
-        .player .nav .nav_nr ul li a{
-            display: flex;
-            display: block;
-            justify-content: center;
-            align-items: center;
-            /* 以上四句用于将a标签布满li标签 */
-            width: auto;
-            height: 64px;
-            line-height: 64px;
-        }
-        .player .nav .nr_thr{
-            color: rgb(153, 201, 77);
-        }
-        .player .nav_nr .nr_last{
-            border-right: 2px solid #d5d5d6;
-        }
-        
-        .player .nav .nav_search{
-            /*  float: left与nav_logo组合使用，实现浮动在一行上*/
-            float: left;
-            /* padding: 0 15px; */
-            padding-left: 30px;
-            height: 64px;
-            line-height: 64px;
-        }
-        .player .nav .nav_search input{
-            /* padding: 8px; */
-            text-indent: 15px;
-            height: 33px;
-            width: 200px;
-            /* 圆角去边框阴影 */
-            border-radius:15px;
-            border:1px solid #DBDBDB;
-            outline:none;
-        }
-        .player .nav .nav_search .input2{
-            width: 70px;
-            height: 33px;
-            background-color: rgb(53, 199, 72) ;
-            text-indent: 0;
-        }
-        .player .nav .nav_login{
-            /*  float: left与nav_logo组合使用，实现浮动在一行上*/
-            float: right;
-            padding:0 30px;
-            padding-right: 0;
-        }
-        .player .cl{
-            clear: both;
-            height: 5px;
-        }
-        
-        .player .content{
-            text-align: center;
-            width: 1260px;
-            height: 650px;
-            margin: 0 auto;
-            padding-top: 20px;
-            background-color: #e4f5f5;
-        }
-        .player .content .c_left{
-            /* margin: 0 5px; */
-            /* display: inline-block; */
-            float: left;
-            width: 210px;
-            min-width: 210px;
-            height: 378px;
-            border-radius:5px;
-            background-color: #272C33;
-            text-indent: 0;
-            line-height: 378px;
-        }
-        .player .content .c_center{
-            display: inline-block; 
-            /* float: left; */
-            margin: 0 10px;
-            width: 800px;
-            /* 高度限定 */
-            height: 378px;
-            border-radius:5px;
-            text-indent: 0;
-            /* background-color: teal; */
-        }
-        .player .content .c_center a{
-            padding: 0;
-            height: 100%;
-        }
-        .player .content .c_center video{
-            border-radius: 5px;
-        }
-        .player .content .c_right{
-            /* margin: 0 5px; */
-            /* display: inline-block; */
-            float: right;
-            width: 210px;
-            height: 378px;
-            min-width: 210px;
-            /* height: 378px; */
-            background-color:#ffffff;
-            border-radius:5px;
-            text-indent: 0;
-        }
-        .player .content img{
-            border-radius:5px;
-        }
-        .player .content .c_left a{
-            color: #c7c7c7;
-            height: 44px;
-            line-height: 44px;
-            text-align: left;
-            text-indent: 30px;
-        }
-        .player .content .c_left .nr_kcgk{
-            color: rgb(153, 201, 77);
-        }
-        /*用于ul内容居中显示 */
-        /* .player .content .c_right{
-            margin: 10px 0;
-            height: 378px;
-            display: flex;
-            flex-direction: column; 
-            justify-content: center;
-        } */
-        .player .content .c_left .a1{
-            height: 20px;
-        }
-        .player .content .c_right div{
-            margin: 20px 0 0 0;
-        }
-        .player .content .c_right .r_tg{
-            margin-top: 20px;
-        }
-        .player .content .c_right .r_wel{
-            /* position:absolute; */
-            /* margin: 0 auto; */
-            margin-top: 90px;
-            /* bottom: 0; */
-            /* padding-left: 73px; */
-        }
-        .player .content .c_right .r_tx{
-            margin-top: 55px;
-        }
-        .player .content .c_right .submit{
-            width: 150px;
-            height: 37.8px;
-            border-radius: 25px;
-            border:1px solid #DBDBDB;
-            outline:none;
-            background-color: #35c748;
-        }
-        /* .player .content  .tj_content .tj_class{
-            padding: 20px 0;
-        } */
-        .player .content .tj_content div{
-            text-align: left;
-        }
-        .player .content .tj_content .tjkc{
-            padding-bottom: 20px;
-        }
-        .player .content .tj_content div span{
-            font-family: 微软雅黑, 'Microsoft YaHei';
-            font-size: 24px;
-            color: #111111;
-        }
-        .player .content .tj_detail{
-            float: left;
-        }
-        .player .content .tj_detail div{
-            width: 236px;
-            height: 270px;
-            background-color: #ffffff;
-            /* margin: 0 20px 0 0; */
-            margin-left: 2.8%;
-            margin-bottom: 20px;
-            float: left;
-        }
-        .player .content .tj_detail a{
-            line-height: unset;
-            display: block;
-            padding: 0;
-        }
-        .player .content .tj_detail .tj_last{
-            margin: 0;
-            margin-left: 2.8%;
-            margin-bottom: 20px;
-            float: left;
-        }
-        .player .content .tj_detail h4{
-            height: 40px;
-            line-height: 40px;
-            text-indent: 10px;
-            margin-bottom: 20px;
-        }
-        .player .content .tj_detail p{
-            height: 30px;
-            line-height: 30px;
-            text-indent: 10px;
-        }
-        #d1{
-            border-radius: 5px;
-            width: 400px;
-            height: 230px;
-            z-index: 2;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-left: -200px;
-            margin-top: -150px;
-            overflow: hidden;
-            display: none;
-            background-color: white;
-        }
-        #d2{
-            position: fixed;
-            left: 0;
-            top:0;
-            width: 100%;
-            height: 100%;
-            background-color: grey;
-            z-index: 1;
-            opacity: 0.8;
-            display: none;
-        }
-        #number{
-            display: block;
-            width: 90%;
-            height: 30px;
-            margin: 40px auto;
-            border: solid 1px #248CD6;
-            border-radius: 5px;
-            outline: none;
-            padding-left: 5px;
-        }
-        #number:focus{
-            border: solid 1px #248CD6;
-            border-radius: 5px;
-            box-shadow: 0 0 8px #248CD6;
-        }
-        .tc .submit{
-            display: flex;
-            width: 90%;
-            height: 40px;
-            margin: 20px auto;
-        }
-        .tc .cancel,.confirm{
-            flex: 1;
-            margin: 2px;
-            border: none;
-            transition: all 0.2s;
-        }
-        .tc .cancel:hover,.confirm:hover{
-            background-color: #248CD6;
-            color: white;
-        }
-        .tc .top{
-            width: 90%;
-            height: 20px;
-            margin: 2px auto;
-        }
-        .tc .top a{
-            float: right;
-            margin-right: 2px;
-            text-decoration: none;
-            color: #3A3C3D;
-            opacity: 0.5;
-        }
-        .tc .top a:hover{
-            opacity: 1;
-        }
-        .player .company{
-            padding: 10px 0;
-            /* height: 208px;  */
-            text-align: center;
-        }
-
-        .player .xstw{
-            line-height: 35px;
-            margin-top: 25px;
-        }
-        .player .xstw input{
-            
-            width: 125px;
-            height: 35px;
-            margin: 0 50px;
-            border-radius: 25px;
-            border:1px solid #DBDBDB;
-            outline:none;
-            background-color: #4d99fd;
-        }
-        .player .tc_tit{
-            color: #3A3C3D;
-            opacity: 0.7;
-            text-align: left;
-            height: 64px;
-            line-height: 64px;
-            /* width: 100%; */
-        }
-    </style>
+    <link rel="stylesheet" href="css/watch.css" type="text/css">
+    <script src="js/watch.js" type="text/javascript"></script>
+    <script src="js/talk.js" type="text/javascript"></script>
+    <!-- <script src="js/watch1.js" type="text/javascript"></script> -->
     
 </head>
 <body>
@@ -402,24 +51,40 @@
             </div>
             <div class="c_center">
                 <div>
-                    <video id="video" src="video/html.mp4" width="800px" height="378px" controls></video>
+                    <video id="videos" src="video/html.mp4" width="800px" height="378px" controls preload="auto"></video>
                 </div>
             </div>
             <div class="c_right">
-                <div class="r_tg"><span>免费学习名校名师的</br>精品课程</span></div>
+                <!-- <div class="r_tg"><span>免费学习名校名师的</br>精品课程</span></div>
                 <div class="r_tx"><img src="photo/grzx.png" alt=""></div>
                 <div><input type="submit" class="submit" value="登录" onclick=change()></div>
-                <div class="r_wel"><span>欢迎使用</span></div>
+                <div class="r_wel"><span>欢迎使用</span></div> -->
+                <div class="talk_con">
+                    <div style="background-color: rgb(156, 146, 156); height: 30px; line-height: 30px;">聊天窗口</div>
+                    <div class="talk_show" id="words">
+                        <div class="atalk"><span id="asay">老师：上课了！</span></div>
+                        <div class="btalk"><span id="bsay">学生：老师好！</span></div>
+                    </div>
+                    <div class="talk_input">
+                        
+                        <select class="whotalk" id="who">
+                            <option value="0">师</option>
+                            <option value="1">生</option>
+                        </select>
+                        <input type="text" class="talk_word" id="talkwords">
+                        <input type="button" value="发送" class="talk_sub" id="talksub">
+                    </div>
+                </div>
             </div>
             <div class="cl"></div>
             <div>说明：使用JS代码，播放到一定时间，自动弹出问题提问（目前是5-7秒弹出提问）！</div>
-            <div>学生则可以通过下方按钮向老师提问。</div>
+            <div>学生可以通过下方按钮调出问题回答界面。</div>
 
             <div class="xstw">
-                学生提问：
-                <input type="submit" value="文字提问" onclick="chickMe()">
-                <input type="submit" value="语音提问" >
-                <input type="submit" value="视频提问">
+                回答问题：
+                <input type="submit" value="文字回答" onclick="stu_ques()">
+                <input type="submit" value="语音回答" >
+                <input type="submit" value="视频回答" >
             </div>
             <!-- 自定义弹窗 -->
             <div class="tc">
@@ -430,8 +95,9 @@
                         <!-- <span>444</span> -->
                         <div class="tc_tit">
                             <span class="xstwtc">学生提问弹窗</span>
-                            <a href="javascript:void(0)" onclick="cancel()">&#935;</a>
+                            <a href="javascript:void(0)" onclick="closes()">&#935;</a>
                         </div>
+                        <div class="question">CSS的作用是什么？</div>
                     </div>
                     <input type="text" class="number" placeholder="请输入" id="number">
                     <div class="submit">
@@ -449,7 +115,7 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     var sta_time=0;
     var end_time=0;
     var vid=document.getElementsByTagName("video")[0];
@@ -457,15 +123,15 @@
     vid.addEventListener("play",function(){
         setInterval(() => {
             end_time=vid.currentTime;
-            console.log(sta_time);
-            console.log(end_time-sta_time);
-            //播放三秒弹出问题
-            if(end_time>5&&end_time<7){
-                // vid.pause();
+            console.log("开始时间："+sta_time);
+            console.log("结束时间："+end_time);
+            //播放5秒弹出问题
+            if(end_time>5&&sta_time==0){
+                vid.pause();
                 chickMe();
+                sta_time=1;
             }
-
-        }, 3000);
+        }, 2000);
     })
     function change(){
         // chickMe();
@@ -482,6 +148,7 @@
         d2.style.display="none";
         let d1=document.getElementById("d1");
         d1.style.display="none";
+        sta_time=0;
         console.log("您点击了取消");
     }
     function confirm() {
@@ -492,5 +159,6 @@
         d1.style.display="none";
         vid.play();
     }
-    </script>
+    </script> -->
+
 </html>

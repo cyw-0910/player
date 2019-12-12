@@ -1,11 +1,68 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>交互式视频播放器-player</title>
-    <style>
+        .talk_con{
+            width: 210px;
+            height: 378px;
+        }
+        .talk_show{
+            /* padding: 0 5px; */
+            /* margin: 0 5px; */
+            width: 210px;
+            height: 318px;
+            overflow:auto;
+        }
+        .talk_input{
+            width:100%;
+            height: 30px;
+            
+            /* margin:10px auto 0; */
+        }
+        .whotalk{
+            width:45px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            
+            width:110px;
+            height:26px;
+            padding:0px;
+            float:left;
+            /* margin-left:10px; */
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:50px;
+            height:30px;
+            float:left;
+            border-radius: 10px;
+            background-color: #0181cc;
+            border: 1px solid #DBDBDB;
+            outline: none;
+        }
+        .atalk{
+           margin:10px 5px; 
+           text-align: left;
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            /* margin:10px; */
+            text-align:right;
+            margin:10px 5px; 
+        }
+        .btalk span{
+            display:inline-block;
+            background:rgb(53, 199, 72);
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
         *{
             margin: 0;
             padding: 0;
@@ -54,7 +111,7 @@
         }
         .player .nav .nav_logo a{
             height: 44px;
-            width: 100%;
+            width: 250px;
             padding: 10px 50px;
             padding-left: 0;
         }
@@ -72,7 +129,7 @@
             height: 64px;
             line-height: 64px;
         }
-        .player .nav_nr .nr_first{
+        .player .nav .nr_thr{
             color: rgb(153, 201, 77);
         }
         .player .nav_nr .nr_last{
@@ -111,12 +168,13 @@
         }
         .player .cl{
             clear: both;
-            height: 50px;
+            height: 5px;
         }
+        
         .player .content{
             text-align: center;
             width: 1260px;
-            height: 900px;
+            height: 650px;
             margin: 0 auto;
             padding-top: 20px;
             background-color: #e4f5f5;
@@ -138,22 +196,27 @@
             /* float: left; */
             margin: 0 10px;
             width: 800px;
+            /* 高度限定 */
             height: 378px;
             border-radius:5px;
             text-indent: 0;
-            background-color: teal;
+            /* background-color: teal; */
         }
         .player .content .c_center a{
             padding: 0;
             height: 100%;
+        }
+        .player .content .c_center video{
+            border-radius: 5px;
         }
         .player .content .c_right{
             /* margin: 0 5px; */
             /* display: inline-block; */
             float: right;
             width: 210px;
-            min-width: 210px;
             height: 378px;
+            min-width: 210px;
+            /* height: 378px; */
             background-color:#ffffff;
             border-radius:5px;
             text-indent: 0;
@@ -168,6 +231,9 @@
             text-align: left;
             text-indent: 30px;
         }
+        .player .content .c_left .nr_kcgk{
+            color: rgb(153, 201, 77);
+        }
         /*用于ul内容居中显示 */
         /* .player .content .c_right{
             margin: 10px 0;
@@ -179,9 +245,7 @@
         .player .content .c_left .a1{
             height: 20px;
         }
-        .player .content .c_right div{
-            margin: 20px 0 0 0;
-        }
+      
         .player .content .c_right .r_tg{
             margin-top: 20px;
         }
@@ -217,11 +281,16 @@
             font-size: 24px;
             color: #111111;
         }
+        .player .content .tj_detail{
+            float: left;
+        }
         .player .content .tj_detail div{
             width: 236px;
             height: 270px;
             background-color: #ffffff;
-            margin: 0 20px 0 0;
+            /* margin: 0 20px 0 0; */
+            margin-left: 2.8%;
+            margin-bottom: 20px;
             float: left;
         }
         .player .content .tj_detail a{
@@ -231,6 +300,9 @@
         }
         .player .content .tj_detail .tj_last{
             margin: 0;
+            margin-left: 2.8%;
+            margin-bottom: 20px;
+            float: left;
         }
         .player .content .tj_detail h4{
             height: 40px;
@@ -243,126 +315,115 @@
             line-height: 30px;
             text-indent: 10px;
         }
+        #d1{
+            border-radius: 5px;
+            width: 400px;
+            height: 230px;
+            z-index: 2;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -200px;
+            margin-top: -150px;
+            overflow: hidden;
+            display: none;
+            background-color: white;
+        }
+        #d2{
+            position: fixed;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100%;
+            background-color: grey;
+            z-index: 1;
+            opacity: 0.8;
+            display: none;
+        }
+        #number{
+            display: block;
+            width: 90%;
+            height: 30px;
+            margin: 0 auto;
+            /* margin: 40px auto; */
+            border: solid 1px #248CD6;
+            border-radius: 5px;
+            outline: none;
+            text-indent: 10px;
+            /* padding-left: 5px; */
+        }
+        #number:focus{
+            border: solid 1px #248CD6;
+            border-radius: 5px;
+            box-shadow: 0 0 8px #248CD6;
+        }
+        .tc .submit{
+            display: flex;
+            width: 90%;
+            height: 40px;
+            margin: 20px auto;
+        }
+        .tc .cancel,.confirm{
+            flex: 1;
+            margin: 2px;
+            border: none;
+            transition: all 0.2s;
+        }
+        .tc .cancel:hover,.confirm:hover{
+            background-color: #248CD6;
+            color: white;
+        }
+        /* .tc .top{
+            width: 90%;
+            height: 20px;
+            margin: 2px auto;
+        } */
+        .tc .top a{
+            float: right;
+            margin-right: 2px;
+            text-decoration: none;
+            color: #3A3C3D;
+            opacity: 0.5;
+        }
+        .tc .top a:hover{
+            opacity: 1;
+        }
         .player .company{
             padding: 10px 0;
             /* height: 208px;  */
             text-align: center;
         }
-    </style>
-    <script type="text/javascript">
-    function change(){
-        alert("功能开发中...");
-    }
-    </script>
-</head>
-<body>
-    <div class="player">
-        <div class="nav">
-            <div class="nav_logo">
-                <a href="index.html"><img src="photo/playerlogo.png" alt="网站logo"></a>
-            </div>
-            <div class="nav_nr nav_border_left">
-                <ul>
-                    <li><a href="index.html" class="nr_first">首页</a></li>
-                    <li><a href="kczx.html">课程中心</a></li>
-                    <li><a href="grzx.html">个人中心</a></li>
-                    <li><a href="gywm.html" class="nr_last">关于我们</a></li>
-                </ul>
-            </div>
-            <div class="nav_search">
-                <input type="text" placeholder="输入关键词搜索">
-                <input type="submit" class="input2" value="搜索" onclick=change()>
-            </div>
-            <div class="nav_login">
-                <ul>
-                    <li><a href="#" onclick="change()">注册</a></li>
-                    <li><a href="#">|</a></li>
-                    <li><a href="#" onclick="change()">登录</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- <div class="cl"></div> -->
-        <div class="content">
-            <div class="c_left">
-                <ul>
-                    <li><a href="" class="a1"></a></li>
-                    <li><a href="kczx.html">精品课程</a></li>
-                    <li><a href="kczx.html">外语</a></li>
-                    <li><a href="kczx.html">计算机</a></li>
-                    <li><a href="kczx.html">考研</a></li>
-                    <li><a href="kczx.html">理工补习</a></li>
-                    <li><a href="kczx.html">考证就业</a></li>
-                    <li><a href="kczx.html">更多</a></li>
-                </ul>
-            </div>
-            <div class="c_center">
-                <!-- <div class="c_center2"> -->
-                    <a href="watch.html"><img src="photo/2.png" alt="2" class="loop_img" width="100%" height="100%"></a>
-                        <!-- <img src="/photo/2.png" alt="2" class="loop_img">
-                        <img src="/photo/3.png" alt="3" class="loop_img">
-                        <img src="/photo/4.png" alt="4" class="loop_img"> -->
-                <!-- </div> -->
-            </div>
-            <div class="c_right">
-                <div class="r_tg"><span>免费学习名校名师的</br>精品课程</span></div>
-                <div class="r_tx"><img src="photo/grzx.png" alt=""></div>
-                <div><input type="submit" class="submit" value="登录" onclick=change()></div>
-                <div class="r_wel"><span>欢迎使用</span></div>
-            </div>
-            <div class="cl"></div>
-            <div class="tj_content">
-                <div class="tjkc"><span class="tj_class">推荐课程</span></div>
-                <div class="tj_detail">
-                    <div>
-                        <a href="watch.html">
-                            <img src="photo/tj.jpeg" alt="" width="236px" height="136px">
-                            <h4>推荐内容</h4>
-                            <p>推荐内容详细介绍</p>
-                            <p>推荐内容详细介绍</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="watch.html">
-                            <img src="photo/tj.jpeg" alt="" width="236px" height="136px">
-                            <h4>推荐内容</h4>
-                            <p>推荐内容详细介绍</p>
-                            <p>推荐内容详细介绍</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="watch.html">
-                            <img src="photo/tj.jpeg" alt="" width="236px" height="136px">
-                            <h4>推荐内容</h4>
-                            <p>推荐内容详细介绍</p>
-                            <p>推荐内容详细介绍</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="watch.html">
-                            <img src="photo/tj.jpeg" alt="" width="236px" height="136px">
-                            <h4>推荐内容</h4>
-                            <p>推荐内容详细介绍</p>
-                            <p>推荐内容详细介绍</p>
-                        </a>
-                    </div>
-                    <div class="tj_last">
-                        <a href="watch.html">
-                            <img src="photo/tj.jpeg" alt="" width="236px" height="136px">
-                            <h4>推荐内容</h4>
-                            <p>推荐内容详细介绍</p>
-                            <p>推荐内容详细介绍</p>
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- <div style="clear: both; font-size: 25px; height: 100px; line-height: 100px; text-align: left; text-indent: 20px;">施工中...</div> -->
-        </div>
-        <div class="company">
-                <div class="kbai"></div>
-                <p>公司地址：广西玉林市教育东路&emsp; &emsp;&emsp;联系电话：0779-77701234</p>
-                <p>Copyright&nbsp;©&nbsp;2019&nbsp;by&nbsp;陈延威&nbsp;All&nbsp;Rights&nbsp;Reserved</p>
-            </div>
-    </div>
-</body>
-</html>
+
+        .player .xstw{
+            line-height: 35px;
+            margin-top: 25px;
+        }
+        .player .xstw input{
+            
+            width: 125px;
+            height: 35px;
+            margin: 0 50px;
+            border-radius: 25px;
+            border:1px solid #DBDBDB;
+            outline:none;
+            background-color: #4d99fd;
+        }
+        .player .tc_tit{
+            padding: 0 16.5px;
+            color: #3A3C3D;
+            opacity: 0.7;
+            text-align: left;
+            height: 40px;
+            line-height: 40px;
+            /* width: 100%; */
+        }
+        .player .tc_tit a{
+            height: 40px;
+            line-height: 40px;
+        }
+        .player .question{
+            padding: 5px 0;
+            text-align: left;
+            text-indent: 20px;
+            padding-top: 25px;
+        }
