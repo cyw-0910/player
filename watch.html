@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <script src="js/watch.js" type="text/javascript"></script>
     <script src="js/talk.js" type="text/javascript"></script>
     <!-- <script src="js/watch1.js" type="text/javascript"></script> -->
-    
+
 </head>
+
 <body>
     <div class="player">
         <div class="nav">
@@ -43,7 +45,7 @@
                 <ul>
                     <li><a href="" class="a1"></a></li>
                     <li><a href="kczx.html" class="nr_wdkx">我的课程</a></li>
-                    <li><a href="watch.html"class="nr_kcgk">课程观看</a></li>
+                    <li><a href="watch.html" class="nr_kcgk">课程观看</a></li>
                     <li><a href="exam.html">测评考试</a></li>
                     <li><a href="kczx.html">等待补充</a></li>
                     <li><a href="kczx.html">等待补充</a></li>
@@ -51,7 +53,8 @@
             </div>
             <div class="c_center">
                 <div>
-                    <video id="videos" src="video/html.mp4" width="800px" height="378px" controls preload="auto"></video>
+                    <video id="videos" src="video/html.mp4" width="800px" height="378px" controls
+                        preload="auto"></video>
                 </div>
             </div>
             <div class="c_right">
@@ -66,7 +69,7 @@
                         <div class="btalk"><span id="bsay">学生：老师好！</span></div>
                     </div>
                     <div class="talk_input">
-                        
+
                         <select class="whotalk" id="who">
                             <option value="0">师</option>
                             <option value="1">生</option>
@@ -83,14 +86,14 @@
             <div class="xstw">
                 回答问题：
                 <input type="submit" value="文字回答" onclick="stu_ques()">
-                <input type="submit" value="语音回答" >
-                <input type="submit" value="视频回答" >
+                <input type="submit" value="语音回答">
+                <input type="submit" value="视频回答">
             </div>
             <!-- 自定义弹窗 -->
             <div class="tc">
-                    <div id="d2"></div>
-                    <!-- <button onclick="chickMe()">点击</button> -->
-                    <div id="d1">
+                <div id="d2"></div>
+                <!-- <button onclick="chickMe()">点击</button> -->
+                <div id="d1">
                     <div class="top">
                         <!-- <span>444</span> -->
                         <div class="tc_tit">
@@ -102,7 +105,7 @@
                     <input type="text" class="number" placeholder="请输入" id="number">
                     <div class="submit">
                         <!-- <input type="checkbox" value="111"> -->
-                        <button class="cancel"onclick="cancel()">取消</button>
+                        <button class="cancel" onclick="cancel()">取消</button>
                         <button class="confirm" onclick="confirm()">确定</button>
                     </div>
                 </div>

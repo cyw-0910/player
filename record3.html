@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>录音</title>
 </head>
+
 <body>
     <h1>HTML5网页在线录制MP3音频</h1>
     <button onclick="funStart(this);" id="btnStart" disabled>录制</button>
@@ -16,7 +18,7 @@
     <script src="js/recordmp3.js"></script>
     <script>
         var recorder = new MP3Recorder({
-            debug:true,
+            debug: true,
             funOk: function () {
                 btnStart.disabled = false;
                 log('初始化成功');
@@ -79,13 +81,14 @@
                     recordingslist.innerHTML += '上传成功：<a href="' + xhr.responseText + '" target="_blank">' + mp3Name + '</a>';
                 }
             };
-        
+
             xhr.open('POST', 'upload.ashx');
             xhr.send(fd);
         }
     </script>
-	<div style="text-align:center;">
-<p><a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
-</div>
+    <div style="text-align:center;">
+        <p><a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+    </div>
 </body>
+
 </html>
