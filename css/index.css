@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+
+.player {
+    height: 64px;
+    width: 100%;
+    background-color: white;
+}
+
+.player .nav {
+    width: 1260px;
+    height: 64px;
+    margin: 0 auto;
+    /* margin容器级居中 */
+}
+
+.player ul {
+    list-style: none;
+}
+
+.player .nav ul li {
+    float: left;
+    /* width: 120px; */
+    text-align: center;
+}
+
+.player a {
+    text-decoration: none;
+    display: block;
+    color: #000;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 5px;
+}
+
+.player .nav .nav_border_left ul li {
+    width: 100px;
+    border-left: 2px solid #d5d5d6;
+}
+
+.player .nav .nav_logo {
+    /*  float: left与nav_nr组合使用，实现浮动*/
+    float: left;
+    height: 64px;
+    line-height: 64px;
+}
+
+.player .nav .nav_logo a {
+    height: 44px;
+    /* width: 100%; */
+    padding: 10px 50px;
+    padding-left: 0;
+}
+
+.player .nav .nav_nr {
+    /*  float: left与nav_logo组合使用，实现浮动*/
+    float: left;
+}
+
+.player .nav .nav_nr ul li a {
+    display: flex;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /* 以上四句用于将a标签布满li标签 */
+    width: auto;
+    height: 64px;
+    line-height: 64px;
+}
+
+.player .nav_nr .nr_first {
+    color: rgb(153, 201, 77);
+}
+
+.player .nav_nr .nr_last {
+    border-right: 2px solid #d5d5d6;
+}
+
+.player .nav .nav_search {
+    /*  float: left与nav_logo组合使用，实现浮动在一行上*/
+    float: left;
+    /* padding: 0 15px; */
+    padding-left: 30px;
+    height: 64px;
+    line-height: 64px;
+}
+
+.player .nav .nav_search input {
+    /* padding: 8px; */
+    text-indent: 15px;
+    height: 33px;
+    width: 200px;
+    /* 圆角去边框阴影 */
+    border-radius: 15px;
+    border: 1px solid #DBDBDB;
+    outline: none;
+}
+
+.player .nav .nav_search .input2 {
+    width: 70px;
+    height: 33px;
+    background-color: rgb(53, 199, 72);
+    text-indent: 0;
+}
+
+.player .nav .nav_login {
+    /*  float: left与nav_logo组合使用，实现浮动在一行上*/
+    float: right;
+    padding: 0 30px;
+    padding-right: 0;
+}
+
+.player .cl {
+    clear: both;
+    height: 50px;
+}
+
+.player .cls {
+    clear: both;
+}
+
+.player .content {
+    text-align: center;
+    width: 1260px;
+    height: 900px;
+    margin: 0 auto;
+    padding-top: 20px;
+    background-color: #e4f5f5;
+}
+
+.player .content .c_left {
+    /* margin: 0 5px; */
+    /* display: inline-block; */
+    float: left;
+    width: 210px;
+    min-width: 210px;
+    height: 378px;
+    border-radius: 5px;
+    background-color: #272C33;
+    text-indent: 0;
+    line-height: 378px;
+}
+
+.player .content .c_center {
+    display: inline-block;
+    /* float: left; */
+    margin: 0 10px;
+    width: 800px;
+    height: 378px;
+    border-radius: 5px;
+    text-indent: 0;
+    background-color: teal;
+}
+
+.player .content .c_center a {
+    padding: 0;
+    height: 100%;
+}
+
+.player .content .c_right {
+    /* margin: 0 5px; */
+    /* display: inline-block; */
+    float: right;
+    width: 210px;
+    min-width: 210px;
+    height: 378px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-indent: 0;
+}
+
+.player .content img {
+    border-radius: 5px;
+}
+
+.player .content .c_left a {
+    color: #c7c7c7;
+    height: 44px;
+    line-height: 44px;
+    text-align: left;
+    text-indent: 30px;
+}
+
+/*用于ul内容居中显示 */
+/* .player .content .c_right{
+    margin: 10px 0;
+    height: 378px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+} */
+.player .content .c_left .a1 {
+    height: 20px;
+}
+
+.player .content .c_right div {
+    margin: 20px 0 0 0;
+}
+
+.player .content .c_right .r_tg {
+    margin-top: 20px;
+}
+
+.player .content .c_right .r_wel {
+    /* position:absolute; */
+    /* margin: 0 auto; */
+    margin-top: 90px;
+    /* bottom: 0; */
+    /* padding-left: 73px; */
+}
+
+.player .content .c_right .r_tx {
+    margin-top: 55px;
+}
+
+.player .content .c_right .submit {
+    width: 150px;
+    height: 37.8px;
+    border-radius: 25px;
+    border: 1px solid #DBDBDB;
+    outline: none;
+    background-color: #35c748;
+}
+
+/* .player .content  .tj_content .tj_class{
+    padding: 20px 0;
+} */
+.player .content .tj_content div {
+    text-align: left;
+}
+
+.player .content .tj_content .tjkc {
+    padding-bottom: 20px;
+}
+
+.player .content .tj_content div span {
+    font-family: 微软雅黑, 'Microsoft YaHei';
+    font-size: 24px;
+    color: #111111;
+}
+
+.player .content .tj_detail div {
+    width: 236px;
+    height: 270px;
+    background-color: #ffffff;
+    margin: 0 20px 0 0;
+    float: left;
+}
+
+.player .content .tj_detail a {
+    line-height: unset;
+    display: block;
+    padding: 0;
+}
+
+.player .content .tj_detail .tj_last {
+    margin: 0;
+}
+
+.player .content .tj_detail h4 {
+    height: 40px;
+    line-height: 40px;
+    text-indent: 10px;
+    margin-bottom: 20px;
+}
+
+.player .content .tj_detail p {
+    height: 30px;
+    line-height: 30px;
+    text-indent: 10px;
+}
+
+.player .company {
+    padding: 10px 0;
+    /* height: 208px;  */
+    text-align: center;
+}
