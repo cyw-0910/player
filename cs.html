@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/ce.css" type="text/css">
-    <script src="js/ce.js" type="text/javascript"></script>
-
-</head>
-
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>实现div滚动条默认最底部以及默认最右边</title> 
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+ $(document).ready(function(){
+    $('#scroll_div').scrollTop( $('#scroll_div')[0].scrollHeight);
+    $('#scroll_div').scrollLeft( $('#scroll_div')[0].scrollWidth);
+ });
+</script>
 <body>
-    <div class="talk_con">
-        <div class="talk_show" id="words">
-            <div class="atalk"><span id="asay">A说：吃饭了吗？</span></div>
-            <div class="btalk"><span id="bsay">B说：还没呢，你呢？</span></div>
-        </div>
-        <div class="talk_input">
-            <select class="whotalk" id="who">
-                <option value="0">A说：</option>
-                <option value="1">B说：</option>
-            </select>
-            <input type="text" class="talk_word" id="talkwords">
-            <input type="button" value="发送" class="talk_sub" id="talksub">
-        </div>
-    </div>
-</body>
 
-</html>
+
+<div id="scroll_div" style="overflow-y:scroll; overflow-x:scroll;width:50px; height:300px; border:1px solid #F00;">
+    DIVCSS5测试内容，欢迎来到DIVCSS5学习DIV+CSS技术。大家可以通过DIVCSS5主站上的所有免费CSS教程足可学会DIV CSS技术 -如果需要深入系统学习、较短时间达到理想学习效果可参加DIV+CSS培训班学习。
+</div>
+</body> 
+</html> 
