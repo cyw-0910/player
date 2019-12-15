@@ -57,6 +57,7 @@
             margin:10px 5px; 
         }
         .btalk span{
+            text-align: left;
             display:inline-block;
             background:rgb(53, 199, 72);
             border-radius:10px;
