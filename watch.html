@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/watch.css" type="text/css">
     <script src="js/watch.js" type="text/javascript"></script>
     <script src="js/talk.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+    <script src="js/recorder.js" type="text/javascript"></script>
+    <script  src="js/jquery.min.js" type="text/javascript"></script>
+    <script  src="js/recorders.js" type="text/javascript"></script>
     <!-- <script src="js/watch1.js" type="text/javascript"></script> -->
 
 </head>
@@ -86,8 +88,8 @@
             <div class="xstw">
                 回答问题：
                 <input type="submit" value="文字回答" onclick="stu_ques()">
-                <input type="submit" value="语音回答">
-                <input type="submit" value="视频回答">
+                <input type="button" value="语音回答" onclick="recorders()">
+                <input type="submit" value="视频回答" onclick="change()">
             </div>
             <!-- 自定义弹窗 -->
             <div class="tc">
@@ -118,13 +120,7 @@
         </div>
     </div>
 </body>
-<script>
-    $(document).ready(function () {
-        console.log("aaa");
-        $('#words').scrollTop($('#words')[0].scrollHeight);
-        $('#words').scrollLeft($('#words')[0].scrollWidth);
-    });
-</script>
+
 <!-- <script type="text/javascript">
     var sta_time=0;
     var end_time=0;

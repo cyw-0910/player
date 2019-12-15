@@ -11,7 +11,7 @@ function main () {
         // console.log("标记"+times);
         if (currentTime > 5 && cods == 1) {
             chickMe();
-            clearSerInt (cods);
+            clearSerInt(cods);
         }
     }, 1500)
 }
